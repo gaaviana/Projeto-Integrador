@@ -6,13 +6,20 @@
     <title>Social Events - Conectando Projetos Sociais</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <script src="js/main.js" defer></script>
 </head>
 <body>
     <header>
         <nav class="navbar">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="logo">
-                <h1><a href="/index.html">Social Events</a></h1>
+                <a href="/index.html" class="logo-link">
+                    <img src="images/logo.svg" alt="Social Events Logo" class="logo-img">
+                    <span class="logo-text">Social Events</span>
+                </a>
             </div>
             <div class="nav-center">
                 <a href="/perfil.html" class="nav-icon">
@@ -27,6 +34,18 @@
                     <i class="fas fa-plus-circle"></i>
                     <span>Criar</span>
                 </a>
+                <div class="search-container">
+                    <button class="nav-icon search-icon" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                        <span>Pesquisar</span>
+                    </button>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Pesquisar projetos...">
+                        <button class="search-submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="nav-right">
                 <a href="#" id="loginBtn">Login</a>
@@ -35,29 +54,50 @@
         </nav>
     </header>
 
+    <!-- Menu Lateral -->
+    <div class="side-menu" id="sideMenu">
+        <div class="side-menu-header">
+            <h2>Menu</h2>
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="side-menu-content">
+            <a href="/perfil.html" class="side-menu-item">
+                <i class="fas fa-user"></i>
+                <span>Perfil</span>
+            </a>
+            <a href="/index.html" class="side-menu-item">
+                <i class="fas fa-compass"></i>
+                <span>Explorar</span>
+            </a>
+            <a href="/criar.html" class="side-menu-item">
+                <i class="fas fa-plus-circle"></i>
+                <span>Criar</span>
+            </a>
+            <div class="side-menu-search">
+                <input type="text" placeholder="Pesquisar projetos...">
+                <button class="search-submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="side-menu-auth">
+                <a href="#" id="sideLoginBtn">Login</a>
+                <a href="#" id="sideRegisterBtn">Cadastrar</a>
+            </div>
+        </div>
+    </div>
+
     <main>
         <section class="hero">
-            <h2>Conecte-se a Projetos Sociais</h2>
-            <p>Encontre e participe de eventos que fazem a diferença</p>
-            <button class="cta-button">Explorar Projetos</button>
-        </section>
-
-        <section class="projects-feed">
-            <h2>Projetos em Destaque</h2>
-            <div class="projects-grid">
-                <!-- Projetos serão carregados dinamicamente via JavaScript -->
+            <div class="hero-content">
+                <h2>Conecte-se a Projetos Sociais</h2>
+                <p>Encontre e participe de eventos que fazem a diferença</p>
+                <button class="cta-button" id="heroRegisterBtn">Cadastre-se Agora</button>
             </div>
         </section>
 
-        <section class="events-feed">
-            <h2>Próximos Eventos</h2>
-            <div class="events-grid">
-                <!-- Eventos serão carregados dinamicamente via JavaScript -->
-            </div>
-        </section>
-
-        <section class="posts-feed">
-            <h2>Últimas Postagens</h2>
+        <section class="posts-feed">       
             <div class="posts-grid">
                 <!-- Postagens serão carregadas dinamicamente via PHP -->
                 <div class="post-card">
